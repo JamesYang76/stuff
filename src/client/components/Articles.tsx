@@ -27,7 +27,7 @@ const Articles: React.FC = () => {
     setLoading(true);
     setArticleList([]);
     axios.get(ARTICLES_URL, { params: { order_by: formState.order_by, filter_by: formState.filter_by } }).then(({data})=>{
-      setArticleList(data.articles);
+      setArticleList(data);
     }).finally(()=>{
       setLoading(false);
     });

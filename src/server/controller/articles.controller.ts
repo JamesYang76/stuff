@@ -10,19 +10,17 @@ export const articlesRequest = async (req: Request, res: Response) => {
   try {
     let ids = await getIDs();
     let articles: Article[] = [];
-    let row_articles: any[] = [];
     const order_by: string = <string>req.query.order_by;
     const filter_by: string = <string>req.query.filter_by;
 
     await Promise.all(ids.map(async (id: number) => {
       let row_article = await getArticle(id)
-      row_articles.push(row_article);
       articles.push(ArticleParser(row_article));
     }));
 
     articles = ArticlesFilter(articles, filter_by);
     ArticlesSorter(articles, order_by);
-    res.status(StatusCodes.OK).json({ row_articles: row_articles, articles: articles });
+    res.status(StatusCodes.OK).json(articles);
   }
   catch(e) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(e);
