@@ -1,0 +1,19 @@
+
+@media all and (max-width:767px) { .container-block { padding: 11% 8% } }
+
+.container-flexbox {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+
+/* Desktops*/
+@media all and (min-width: 768px) {
+  .item-col-3 { width: 30%; margin: 1.6%;}
+}
+
+/* Mobiles */
+@media all and (max-width: 767px) {
+  .item-col-3 { width: 100% }
+}
