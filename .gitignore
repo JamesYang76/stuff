@@ -5,7 +5,7 @@
 /dist
 # testing
 /coverage
-
+/public/bundle.js
 # production
 /build
 

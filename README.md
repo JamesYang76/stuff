@@ -10,7 +10,7 @@ npm ci
 npm run build:dev
 
 # Open a new terminal
-npm run start:dev
+npm run start:dev # wait for few second to make bundle.js
 
 ```
 Then, Open a Browser with http://localhost:3000 
@@ -24,7 +24,9 @@ This command will compile our server code to JavaScript, log any errors in our c
 
 ### `npm run start:dev`
 
-This will run the index.js file in our dist folder and then restart every time an update is made to a file in the dist directory.
+This will run the index.js file in our dist folder and then restart every time an update is made to a file in the dist directory.\
+`bundle.js` is supposed to be made in `public/`
+
 
 
 ### `npm run test`
