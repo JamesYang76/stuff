@@ -5,15 +5,15 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "../../public")));
 
-app.get("/", (req: Request, res: Response, next: NextFunction): void => {
+app.use("/articles", articlesRouter);
+
+app.get("/*", (req: Request, res: Response, next: NextFunction): void => {
   try {
-    res.send("index.html");
+   res.sendFile(path.join(__dirname, '../../public/index.html'));
   } catch (error) {
     next(error);
   }
 });
 
-
-app.use("/articles", articlesRouter);
 
 export default app;
